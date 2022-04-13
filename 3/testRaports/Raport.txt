@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-04-13T14:12:38.681Z",
+    "end": "2022-04-13T14:12:57.515Z",
+    "duration": 18834,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "503c3d79-f962-429c-919b-01f046684536",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8dd4d8c5-637d-404e-a3b9-ee67fdcd8587",
+          "title": "count Vat netto with 7% todo tests",
+          "fullFile": "C:\\Users\\Przemek\\Desktop\\3\\test\\Test1.js",
+          "file": "\\test\\Test1.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "succesfully count a todo in application",
+              "fullTitle": "count Vat netto with 7% todo tests succesfully count a todo in application",
+              "timedOut": false,
+              "duration": 7203,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driveropera = await new Builder().forBrowser(\"opera\").build();\nawait driveropera.get(\"https://www.pitax.pl/wiedza/przepisy-i-wskazniki/kalkulator-vat/\")\nawait driveropera.findElement(By.id(\"taxpayer\")).sendKeys(\"20\", Key.RETURN);\nawait driveropera.findElement(By.id(\"invoiceType\")).sendKeys(\"brutto\", Key.RETURN);\nawait driveropera.findElement(By.id(\"taxType\")).sendKeys(\"7%\", Key.RETURN);\nawait driveropera.findElement(By.id(\"calc-vat-brutto-button\")).click();\nlet todoOperaNetto = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[2]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaBrutto = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[3]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaVatPercent = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[4]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaVat = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[5]/strong')).getText().then(function (value) {\n    return value\n});\ntodoOperaNetto.should.equal(\"18.69\");\ntodoOperaBrutto.should.equal(\"20.00\");\ntodoOperaVatPercent.should.equal(\"7%\");\ntodoOperaVat.should.equal(\"1.31\");\nawait driveropera.quit();\nlet driverchrome = await new Builder().forBrowser(\"chrome\").build();\nawait driverchrome.get(\"https://www.pitax.pl/wiedza/przepisy-i-wskazniki/kalkulator-vat/\")\nawait driverchrome.findElement(By.id(\"taxpayer\")).sendKeys(\"20\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"invoiceType\")).sendKeys(\"brutto\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"taxType\")).sendKeys(\"7%\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"calc-vat-brutto-button\")).click();\nlet todoChromeNetto = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[2]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeBrutto = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[3]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeVatPercent = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[4]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeVat = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[5]/strong')).getText().then(function (value) {\n    return value\n});\ntodoChromeNetto.should.equal(\"18.69\");\ntodoChromeBrutto.should.equal(\"20.00\");\ntodoChromeVatPercent.should.equal(\"7%\");\ntodoChromeVat.should.equal(\"1.31\");\nawait driverchrome.quit();",
+              "err": {},
+              "uuid": "91bdab0b-e600-4b51-9a6a-a2ec9900a69d",
+              "parentUUID": "8dd4d8c5-637d-404e-a3b9-ee67fdcd8587",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "91bdab0b-e600-4b51-9a6a-a2ec9900a69d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7203,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "c225d593-8ff4-4f07-9d40-48fcc51779ad",
+          "title": "count Vat brutto with 23% todo tests",
+          "fullFile": "C:\\Users\\Przemek\\Desktop\\3\\test\\Test1.js",
+          "file": "\\test\\Test1.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "succesfully count a todo in application",
+              "fullTitle": "count Vat brutto with 23% todo tests succesfully count a todo in application",
+              "timedOut": false,
+              "duration": 7889,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driveropera = await new Builder().forBrowser(\"opera\").build();\nawait driveropera.get(\"https://www.pitax.pl/wiedza/przepisy-i-wskazniki/kalkulator-vat/\")\nawait driveropera.findElement(By.id(\"taxpayer\")).sendKeys(\"20\", Key.RETURN);\nawait driveropera.findElement(By.id(\"invoiceType\")).sendKeys(\"netto\", Key.RETURN);\nawait driveropera.findElement(By.id(\"taxType\")).sendKeys(\"23%\", Key.RETURN);\nawait driveropera.findElement(By.id(\"calc-vat-brutto-button\")).click();\nlet todoOperaNettoSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[2]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaBruttoSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[3]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaVatPercentSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[4]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaVatSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[5]/strong')).getText().then(function (value) {\n    return value\n});\ntodoOperaNettoSecond.should.equal(\"20.00\");\ntodoOperaBruttoSecond.should.equal(\"24.60\");\ntodoOperaVatPercentSecond.should.equal(\"23%\");\ntodoOperaVatSecond.should.equal(\"4.60\");\nawait driveropera.quit();\nlet driverchrome = await new Builder().forBrowser(\"chrome\").build();\nawait driverchrome.get(\"https://www.pitax.pl/wiedza/przepisy-i-wskazniki/kalkulator-vat/\")\nawait driverchrome.findElement(By.id(\"taxpayer\")).sendKeys(\"20\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"invoiceType\")).sendKeys(\"netto\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"taxType\")).sendKeys(\"23%\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"calc-vat-brutto-button\")).click();\nlet todoChromeNettoSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[2]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeBruttoSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[3]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeVatPercentSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[4]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeVatSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[5]/strong')).getText().then(function (value) {\n    return value\n});\ntodoChromeNettoSecond.should.equal(\"20.00\");\ntodoChromeBruttoSecond.should.equal(\"24.60\");\ntodoChromeVatPercentSecond.should.equal(\"23%\");\ntodoChromeVatSecond.should.equal(\"4.60\");\nawait driverchrome.quit();",
+              "err": {},
+              "uuid": "293587c7-3750-4f07-95ea-ccccd04e6d9b",
+              "parentUUID": "c225d593-8ff4-4f07-9d40-48fcc51779ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "293587c7-3750-4f07-95ea-ccccd04e6d9b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7889,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "72166b41-1065-460d-9875-45c0e74e7f44",
+          "title": "count Vat brutto with 3% todo tests",
+          "fullFile": "C:\\Users\\Przemek\\Desktop\\3\\test\\Test1.js",
+          "file": "\\test\\Test1.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "succesfully count a todo in application",
+              "fullTitle": "count Vat brutto with 3% todo tests succesfully count a todo in application",
+              "timedOut": false,
+              "duration": 3729,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let driveropera = await new Builder().forBrowser(\"opera\").build();\nawait driveropera.get(\"https://www.pitax.pl/wiedza/przepisy-i-wskazniki/kalkulator-vat/\")\nawait driveropera.findElement(By.id(\"taxpayer\")).sendKeys(\"20\", Key.RETURN);\nawait driveropera.findElement(By.id(\"invoiceType\")).sendKeys(\"netto\", Key.RETURN);\nawait driveropera.findElement(By.id(\"taxType\")).sendKeys(\"3%\", Key.RETURN);\nawait driveropera.findElement(By.id(\"calc-vat-brutto-button\")).click();\nlet todoOperaNettoSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[2]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaBruttoSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[3]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaVatPercentSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[4]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoOperaVatSecond = await driveropera.findElement(By.xpath('//*[@id=\"result\"]/p[5]/strong')).getText().then(function (value) {\n    return value\n});\ntodoOperaNettoSecond.should.equal(\"20.00\");\ntodoOperaBruttoSecond.should.equal(\"20.00\");\ntodoOperaVatPercentSecond.should.equal(\"3%\");\ntodoOperaVatSecond.should.equal(\"0.00\");\nawait driveropera.quit();\nlet driverchrome = await new Builder().forBrowser(\"chrome\").build();\nawait driverchrome.get(\"https://www.pitax.pl/wiedza/przepisy-i-wskazniki/kalkulator-vat/\")\nawait driverchrome.findElement(By.id(\"taxpayer\")).sendKeys(\"20\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"invoiceType\")).sendKeys(\"netto\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"taxType\")).sendKeys(\"3%\", Key.RETURN);\nawait driverchrome.findElement(By.id(\"calc-vat-brutto-button\")).click();\nlet todoChromeNettoSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[2]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeBruttoSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[3]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeVatPercentSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[4]/strong')).getText().then(function (value) {\n    return value\n});\nlet todoChromeVatSecond = await driverchrome.findElement(By.xpath('//*[@id=\"result\"]/p[5]/strong')).getText().then(function (value) {\n    return value\n});\ntodoChromeNettoSecond.should.equal(\"20.00\");\ntodoChromeBruttoSecond.should.equal(\"20.00\");\ntodoChromeVatPercentSecond.should.equal(\"3%\");\ntodoChromeVatSecond.should.equal(\"0.00\");\nawait driverchrome.quit();",
+              "err": {
+                "message": "AssertionError: expected '20.60' to equal '20.00'",
+                "estack": "AssertionError: expected '20.60' to equal '20.00'\n    at Context.<anonymous> (test\\Test1.js:173:38)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+                "diff": "- 20.60\n+ 20.00\n"
+              },
+              "uuid": "25a01c99-5527-4419-a7e2-d11aaca96459",
+              "parentUUID": "72166b41-1065-460d-9875-45c0e74e7f44",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "25a01c99-5527-4419-a7e2-d11aaca96459"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3729,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "raport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "/Users/Przemek/Desktop/3/testRaports",
+        "reportFilename": "raport"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
