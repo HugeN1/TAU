@@ -1,6 +1,6 @@
 const chakram = require("chakram");
 
-describe("Get data for user with ID 52767", () => {
+describe("Get data for meal with ID 52767", () => {
 
   it("should give HTTP status code 200", async () => {
     return chakram.get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52767").expectStatus(200);
@@ -20,7 +20,7 @@ describe("Get data for user with ID 52767", () => {
 
 });
 
-describe("Get data for user with ID 52996", () => {
+describe("Get data for meal with ID 52996", () => {
 
   it('should give "strMeal" JSON body element with value "French Onion Chicken with Roasted Carrots & Mashed Potatoes"', async () => {
     return chakram.get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52996").expectJsonMatch("strMeal", "French Onion Chicken with Roasted Carrots & Mashed Potatoes");
